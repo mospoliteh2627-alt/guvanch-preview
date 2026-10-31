@@ -434,3 +434,79 @@
     });
   });
 })();
+
+/* ---------- карусель проектов ---------- */
+(function () {
+  'use strict';
+  var root = document.getElementById('carousel');
+  if (!root) return;
+
+  var slides = Array.prototype.slice.call(root.querySelectorAll('.slide'));
+  var dotsBox = document.getElementById('carousel-dots');
+  var arrows = root.querySelectorAll('.carousel-arrow');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var index = 0;
+  var timer = null;
+
+  var dots = slides.map(function (_, i) {
+    var b = document.createElement('button');
+    b.className = 'carousel-dot' + (i === 0 ? ' is-active' : '');
+    b.type = 'button';
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-label', 'Проект ' + (i + 1));
+    b.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+    b.addEventListener('click', function () { show(i); restart(); });
+    dotsBox.appendChild(b);
+    return b;
+  });
+
+  function show(i) {
+    index = (i + slides.length) % slides.length;
+    slides.forEach(function (s, n) { s.classList.toggle('is-active', n === index); });
+    dots.forEach(function (d, n) {
+      d.classList.toggle('is-active', n === index);
+      d.setAttribute('aria-selected', n === index ? 'true' : 'false');
+    });
+  }
+
+  function next(step) { show(index + step); }
+
+  arrows.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      next(parseInt(btn.getAttribute('data-dir'), 10));
+      restart();
+    });
+  });
+
+  function start() {
+    if (reduce || timer) return;
+    timer = setInterval(function () { next(1); }, 6000);
+  }
+  function stop() { clearInterval(timer); timer = null; }
+  function restart() { stop(); start(); }
+
+  root.addEventListener('mouseenter', stop);
+  root.addEventListener('mouseleave', start);
+  root.addEventListener('focusin', stop);
+  root.addEventListener('focusout', start);
+
+  var startX = null;
+  root.addEventListener('touchstart', function (e) {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+  root.addEventListener('touchend', function (e) {
+    if (startX === null) return;
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) { next(dx < 0 ? 1 : -1); restart(); }
+    startX = null;
+  }, { passive: true });
+
+  root.setAttribute('tabindex', '0');
+  root.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') { next(-1); restart(); }
+    if (e.key === 'ArrowRight') { next(1); restart(); }
+  });
+
+  show(0);
+  start();
+})();

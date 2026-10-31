@@ -105,38 +105,37 @@
         </ul>
       </div>
 
-      <div class="hero-visual" data-reveal aria-hidden="true">
-        <div class="mock">
-          <div class="mock-top">
-            <span class="mock-dots"><i></i><i></i><i></i></span>
-            <span>Расписание · 103С</span>
+      <div class="hero-visual" data-reveal>
+        <div class="carousel" id="carousel" aria-roledescription="карусель" aria-label="Последние проекты">
+          <div class="carousel-stage">
+            <figure class="slide is-active">
+              <img src="assets/projects/schedule-cover.webp" alt="Экран приложения «Расписание»">
+              <figcaption><b>Расписание</b><span>PWA и iOS</span></figcaption>
+            </figure>
+            <figure class="slide">
+              <img src="assets/projects/clinic.webp" alt="Цифровая клиника: вход в систему" loading="lazy">
+              <figcaption><b>Цифровая клиника</b><span>учебная симуляция</span></figcaption>
+            </figure>
+            <figure class="slide">
+              <img src="assets/projects/mis.webp" alt="Тренажёр МИС–ЛИС" loading="lazy">
+              <figcaption><b>МИС–ЛИС</b><span>цифровая лаборатория</span></figcaption>
+            </figure>
+            <figure class="slide">
+              <img src="assets/projects/trainers.webp" alt="Тренажёр «Стационар»" loading="lazy">
+              <figcaption><b>Тренажёры</b><span>SCORM и HVP</span></figcaption>
+            </figure>
+            <figure class="slide">
+              <img src="assets/projects/site.webp" alt="Этот сайт" loading="lazy">
+              <figcaption><b>Веб-сервисы</b><span>сайт и инфраструктура</span></figcaption>
+            </figure>
           </div>
-          <div class="mock-tabs" role="tablist" aria-label="День недели">
-            <button class="mock-tab is-active" type="button" role="tab" aria-selected="true" data-day="mon">Пн</button>
-            <button class="mock-tab" type="button" role="tab" aria-selected="false" data-day="wed">Ср</button>
-            <button class="mock-tab" type="button" role="tab" aria-selected="false" data-day="fri">Пт</button>
+          <div class="carousel-bar">
+            <button class="carousel-arrow" type="button" data-dir="-1" aria-label="Предыдущий проект">←</button>
+            <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="Слайды"></div>
+            <button class="carousel-arrow" type="button" data-dir="1" aria-label="Следующий проект">→</button>
           </div>
-          <div class="mock-row">
-            <span class="mock-time">09:00</span>
-            <span class="mock-subject">Информатика</span>
-            <span class="mock-badge">103С</span>
-          </div>
-          <div class="mock-row">
-            <span class="mock-time">10:40</span>
-            <span class="mock-subject">Информатика</span>
-            <span class="mock-badge">102С</span>
-          </div>
-          <div class="mock-row is-muted">
-            <span class="mock-time">12:40</span>
-            <span class="mock-subject">окно</span>
-            <span class="mock-badge">—</span>
-          </div>
-          <div class="mock-footer"><span class="pulse"></span> PDF или Excel → расписание за 5 секунд</div>
         </div>
-        <div class="float-card float-a">PWA</div>
-        <div class="float-card float-b">Moodle</div>
       </div>
-    </div>
 
     <div class="container stack" data-reveal>
       <div class="stack-track" id="stack-track">
@@ -158,7 +157,6 @@
         <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">Все</button>
         <button class="filter" type="button" data-filter="edu" aria-pressed="false">Учебные</button>
         <button class="filter" type="button" data-filter="web" aria-pressed="false">Веб и PWA</button>
-        <button class="filter" type="button" data-filter="sec" aria-pressed="false">ИБ</button>
         <button class="filter" type="button" data-filter="res" aria-pressed="false">Исследования</button>
       </div>
 
@@ -218,16 +216,16 @@
           <div class="project-art art-web has-shot" aria-hidden="true"><img src="assets/projects/site.webp" alt="Этот сайт на десктопе" loading="lazy" width="1000" height="703"></div>
         </article>
 
-        <article data-cat="sec" class="project" data-reveal>
+        <article data-cat="edu" class="project" data-reveal>
           <div class="project-body">
-            <div class="project-top"><span class="tag tag-accent">ИБ</span><span class="tag">152-ФЗ</span><span class="tag">Аудит</span></div>
-            <h3>Информационная безопасность</h3>
-            <p>Национальный регламент защиты персональных данных в образовании, политики доступа,
-              мониторинг инцидентов и обучение сотрудников.</p>
-            <p class="result"><span class="result-dot"></span> Регламент разработан и утверждён</p>
-            <div class="project-links"><a class="link-arrow" href="#contact">Обсудить аудит <span>→</span></a><a class="case-btn" href="cases/sec.html">Подробнее</a></div>
+            <div class="project-top"><span class="tag tag-accent">Симуляция</span><span class="tag">HTML / JS</span><span class="tag">DOCX / PDF</span></div>
+            <h3>Цифровая клиника МК РАМН</h3>
+            <p>Учебно-симуляционный комплекс: 23 медицинских документа, клинические кейсы, автопроверка,
+              электронная подпись и журнал аудита.</p>
+            <p class="result"><span class="result-dot"></span> 23 документа · 4 кейса · подпись SHA-256</p>
+            <div class="project-links"><a class="link-arrow" href="#contact">Обсудить внедрение <span>→</span></a><a class="case-btn" href="cases/clinic.html">Подробнее</a></div>
           </div>
-          <div class="project-art art-sec" aria-hidden="true"><span>ИБ</span></div>
+          <div class="project-art art-clinic" aria-hidden="true"><img src="assets/projects/clinic-emblem.png" alt="" loading="lazy"></div>
         </article>
 
         <article data-cat="edu web" class="project project-wide project-compact" data-reveal>
