@@ -75,6 +75,7 @@
         <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 12H2M22 12h-2.2M5.6 5.6l1.6 1.6M16.8 16.8l1.6 1.6M18.4 5.6l-1.6 1.6M7.2 16.8l-1.6 1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
         <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.2 8.2 0 1 0 10.2 10.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
       </button>
+      <a class="header-cv" href="assets/CV.pdf" download>CV</a>
       <a class="btn btn-sm btn-primary header-cta" href="mailto:glebe.ru@yandex.ru">Написать</a>
       <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
         <span></span><span></span>
@@ -103,10 +104,16 @@
           <li><b data-count="6">6</b><span>рабочих инструментов</span></li>
           <li><b data-count="26">26</b><span>публикаций</span></li>
         </ul>
+
+        <div class="hiring" data-reveal>
+          <p><span class="pulse"></span> Открыт к предложениям: преподавание, методика, разработка</p>
+          <a class="btn btn-sm btn-ghost" href="assets/CV.pdf" download>Скачать CV · PDF</a>
+        </div>
       </div>
 
       <div class="hero-visual" data-reveal>
         <div class="carousel" id="carousel" aria-roledescription="карусель" aria-label="Последние проекты">
+          <div class="carousel-progress" aria-hidden="true"><span></span></div>
           <div class="carousel-stage">
             <figure class="slide is-active">
               <img src="assets/projects/schedule-cover.webp" alt="Экран приложения «Расписание»">
@@ -132,6 +139,7 @@
           <div class="carousel-bar">
             <button class="carousel-arrow" type="button" data-dir="-1" aria-label="Предыдущий проект">←</button>
             <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="Слайды"></div>
+            <button class="carousel-toggle" type="button" id="carousel-toggle" aria-label="Пауза" aria-pressed="false">Ⅱ</button>
             <button class="carousel-arrow" type="button" data-dir="1" aria-label="Следующий проект">→</button>
           </div>
         </div>

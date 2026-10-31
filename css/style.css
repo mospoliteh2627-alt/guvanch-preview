@@ -1576,3 +1576,65 @@ html[data-theme="light"] .contact-card {
 @media (max-width: 980px) {
   .carousel-stage { aspect-ratio: 1 / 1; }
 }
+
+/* ---------- герой: для работодателя, прогресс карусели ---------- */
+
+.header-cv {
+  padding: 8px 6px;
+  color: var(--muted);
+  font-size: 13.5px;
+  font-weight: 650;
+  letter-spacing: .02em;
+}
+.header-cv:hover { color: var(--accent); }
+
+.hiring { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: 24px; }
+.hiring p { display: flex; align-items: center; gap: 9px; margin: 0; color: var(--muted); font-size: 13.5px; }
+.hiring .pulse { flex: 0 0 auto; }
+
+.carousel { position: relative; overflow: hidden; }
+.carousel-progress {
+  position: absolute;
+  left: 14px; right: 14px; top: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--line);
+  overflow: hidden;
+  z-index: 4;
+}
+.carousel-progress span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+.carousel.is-running .carousel-progress span {
+  animation: slideProgress 7000ms linear forwards;
+}
+.carousel.is-paused .carousel-progress span { animation-play-state: paused; }
+@keyframes slideProgress { to { transform: scaleX(1); } }
+
+.slide img { transition: transform .7s cubic-bezier(.22,1,.36,1); }
+.slide.is-active:hover img { transform: scale(1.02); }
+
+.carousel-toggle {
+  position: absolute;
+  right: 22px; top: 22px;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1;
+  display: grid; place-items: center;
+  z-index: 5;
+  transition: color .18s ease, border-color .18s ease;
+}
+.carousel-toggle:hover { color: var(--accent); border-color: var(--accent); }
+
+@media (max-width: 760px) {
+  .header-cv { display: none; }
+  .hiring p { font-size: 12.5px; }
+}
