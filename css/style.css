@@ -1056,8 +1056,8 @@ html[data-theme="light"] .contact-card {
 
 /* ---------- v2: воздух, типографика, опыт, результаты ---------- */
 
-.section { padding: clamp(96px, 11vw, 150px) 0; }
-.section-head { max-width: 700px; margin-bottom: 58px; }
+.section { padding: clamp(56px, 6vw, 80px) 0; }
+.section-head { max-width: 700px; margin-bottom: 42px; }
 .section-head h2 {
   font-size: clamp(2.1rem, 4.4vw, 3.4rem);
   line-height: 1.04;
@@ -1065,10 +1065,10 @@ html[data-theme="light"] .contact-card {
 }
 .section-sub { margin-top: 16px; font-size: 1.03rem; }
 
-.hero { padding: clamp(140px, 15vh, 180px) 0 24px; }
+.hero { padding: clamp(116px, 13vh, 144px) 0 8px; }
 .hero h1 { font-size: clamp(2.3rem, 4.3vw, 3.7rem); line-height: 1.06; }
-.hero .lead { margin-top: 26px; max-width: 560px; }
-.hero-meta { margin-top: 52px; padding-top: 30px; }
+.hero .lead { margin-top: 22px; max-width: 560px; }
+.hero-meta { margin-top: 38px; padding-top: 24px; }
 
 .eyebrow .num {
   display: inline-block;
@@ -1347,3 +1347,143 @@ html[data-theme="light"] .contact-card {
   .case-inner { padding: 28px 22px 24px; }
   .filters { margin-top: -12px; }
 }
+
+/* компактнее по вертикали */
+.stack { margin-top: 38px; padding-top: 20px; }
+.projects { gap: 18px; }
+.facts-row { margin-top: 40px; }
+.pub-list { margin-top: 24px; }
+.filters { margin: -8px 0 24px; }
+
+/* реальные скриншоты в карточках */
+.project-art.has-shot { padding: 0; overflow: hidden; }
+.project-art.has-shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+  display: block;
+}
+.art-schedule.has-shot {
+  display: grid;
+  place-items: center;
+  padding: 26px 20px;
+  background:
+    radial-gradient(90% 90% at 70% 20%, rgba(122, 162, 255, 0.26), transparent 62%),
+    linear-gradient(150deg, rgba(95, 227, 198, 0.2), rgba(95, 227, 198, 0.03));
+}
+.art-schedule.has-shot img {
+  width: auto;
+  height: 100%;
+  max-height: 330px;
+  object-fit: contain;
+  border-radius: 26px;
+  filter: drop-shadow(0 24px 40px rgba(13, 35, 70, 0.18));
+}
+@media (max-width: 980px) {
+  .art-schedule.has-shot img { max-height: 300px; }
+}
+
+/* компактный опыт в «Обо мне» */
+.mini-exp { margin-top: 22px; display: grid; }
+.mini-exp li {
+  display: grid;
+  grid-template-columns: 104px 1fr;
+  gap: 14px;
+  padding: 9px 0;
+  border-top: 1px solid var(--line);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.mini-exp li:last-child { border-bottom: 1px solid var(--line); }
+.mini-exp span { color: var(--muted-2); font-size: 12px; font-weight: 700; letter-spacing: .04em; padding-top: 2px; }
+.mini-exp b { color: var(--text); font-weight: 650; }
+@media (max-width: 480px) {
+  .mini-exp li { grid-template-columns: 1fr; gap: 2px; }
+}
+
+/* ---------- страницы кейсов ---------- */
+
+.case-page { background: var(--bg); }
+.case-top { border-bottom: 1px solid var(--line); padding: 16px 0; }
+.case-top-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.case-back { color: var(--muted); font-size: 14px; font-weight: 600; }
+.case-back:hover { color: var(--accent); }
+
+.case-hero { padding: clamp(44px, 6vw, 84px) 0 0; }
+.case-hero h1 {
+  margin-top: 14px;
+  max-width: 920px;
+  font-size: clamp(2rem, 4.4vw, 3.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+.case-lead { margin-top: 18px; max-width: 680px; color: var(--muted); font-size: 1.08rem; }
+.case-meta {
+  display: flex; flex-wrap: wrap; gap: 30px;
+  margin-top: 30px; padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.case-meta li { font-size: 14px; color: var(--text); }
+.case-meta span {
+  display: block; margin-bottom: 4px;
+  font-size: 10.5px; font-weight: 750; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--muted-2);
+}
+
+.case-cover { margin-top: 38px; }
+.case-cover img {
+  width: 100%;
+  max-height: 540px;
+  object-fit: cover;
+  object-position: top left;
+  border-radius: 22px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.case-body { padding: clamp(44px, 6vw, 72px) 0; }
+.case-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; max-width: 1000px; }
+.case-body h2 { font-size: 1.3rem; letter-spacing: -0.02em; }
+.case-body p { margin-top: 14px; color: var(--muted); }
+.case-list { margin-top: 14px; display: grid; gap: 10px; }
+.case-list li { position: relative; padding-left: 20px; color: var(--muted); font-size: 0.96rem; }
+.case-list li::before {
+  content: ""; position: absolute; left: 0; top: 9px;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+}
+
+.case-result-title { margin-top: 54px; }
+.case-numbers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 20px; }
+.case-numbers li {
+  padding: 22px 24px; border-radius: 18px;
+  border: 1px solid var(--line); background: var(--surface);
+}
+.case-numbers b { display: block; font-size: 1.85rem; letter-spacing: -0.03em; color: var(--accent); }
+.case-numbers span { display: block; margin-top: 6px; color: var(--muted); font-size: 0.9rem; }
+
+.case-cta { padding: clamp(36px, 5vw, 60px) 0; border-top: 1px solid var(--line); }
+.case-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 26px; flex-wrap: wrap; }
+.case-cta h2 { font-size: 1.55rem; letter-spacing: -0.03em; }
+.case-cta p { margin-top: 8px; color: var(--muted); }
+
+@media (max-width: 760px) {
+  .case-cols { grid-template-columns: 1fr; gap: 26px; }
+  .case-numbers { grid-template-columns: 1fr; }
+}
+
+/* обложка кейса: не режем портретные скриншоты */
+.case-cover img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 580px;
+  margin: 0 auto;
+  object-fit: contain;
+  border: 0;
+  box-shadow: none;
+  filter: drop-shadow(0 30px 50px rgba(13, 35, 70, 0.18));
+}
+
+.mini-exp li div { color: var(--muted); }
+.mini-exp li div b { color: var(--text); }
