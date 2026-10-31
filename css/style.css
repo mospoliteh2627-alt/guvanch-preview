@@ -1263,3 +1263,87 @@ html[data-theme="light"] .contact-card {
 }
 .project-art { min-height: 184px; }
 .art-schedule { min-height: 220px; }
+
+/* ---------- v3: фильтры, кейсы, табы мокапа ---------- */
+
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: -26px 0 28px; }
+.filter {
+  padding: 8px 15px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  transition: color .18s ease, border-color .18s ease, background .18s ease;
+}
+.filter:hover { color: var(--text); border-color: var(--line-strong); }
+.filter.is-active { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
+
+.project.is-hidden { display: none; }
+.project.is-shown { animation: cardIn .32s cubic-bezier(.22,1,.36,1); }
+@keyframes cardIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+.project-links { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: auto; padding-top: 6px; }
+.project-links .link-arrow { margin-top: 0; padding-top: 0; }
+.case-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 650;
+  transition: color .18s ease, border-color .18s ease;
+}
+.case-btn:hover { color: var(--accent); border-color: var(--accent); }
+
+/* табы дней в мокапе */
+.mock-tabs { display: flex; gap: 6px; padding: 12px 0 2px; }
+.mock-tab {
+  padding: 4px 11px;
+  border-radius: 7px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .03em;
+  transition: color .18s ease, background .18s ease, border-color .18s ease;
+}
+.mock-tab:hover { color: var(--text); }
+.mock-tab.is-active { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
+.mock-row.is-swap { animation: rowIn .28s ease; }
+@keyframes rowIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+/* диалог кейса */
+.case {
+  width: min(680px, calc(100% - 32px));
+  padding: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 24px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+.case::backdrop { background: rgba(6, 7, 11, 0.56); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+.case-inner { position: relative; padding: 36px 36px 30px; }
+.case-close {
+  position: absolute; right: 14px; top: 14px;
+  width: 34px; height: 34px; border-radius: 50%;
+  border: 1px solid var(--line);
+  color: var(--muted); font-size: 19px; line-height: 1;
+}
+.case-close:hover { color: var(--text); border-color: var(--line-strong); }
+.case-kicker { font-size: 11.5px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+.case h3 { margin-top: 8px; font-size: 1.55rem; letter-spacing: -0.03em; }
+.case-grid { margin: 24px 0 0; display: grid; gap: 18px; }
+.case-grid dt { font-size: 11px; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; color: var(--muted-2); }
+.case-grid dd { margin: 6px 0 0; color: var(--muted); font-size: 0.95rem; }
+.case-stack { margin-top: 24px; }
+.case-actions { margin-top: 28px; }
+
+@media (max-width: 760px) {
+  .case { border-radius: 20px; }
+  .case-inner { padding: 28px 22px 24px; }
+  .filters { margin-top: -12px; }
+}

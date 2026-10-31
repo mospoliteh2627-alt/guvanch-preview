@@ -266,3 +266,171 @@
     });
   }
 })();
+
+/* ---------- v3: фильтр проектов, кейсы, дни в мокапе ---------- */
+(function () {
+  'use strict';
+
+  /* фильтр */
+  var filters = document.querySelectorAll('.filter');
+  var cards = document.querySelectorAll('.projects .project');
+
+  filters.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var key = btn.getAttribute('data-filter');
+      filters.forEach(function (b) {
+        b.classList.toggle('is-active', b === btn);
+        b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+      });
+      cards.forEach(function (card) {
+        var cats = (card.getAttribute('data-cat') || '').split(' ');
+        var show = key === 'all' || cats.indexOf(key) !== -1;
+        card.classList.toggle('is-hidden', !show);
+        card.classList.remove('is-shown');
+        if (show) {
+          void card.offsetWidth;
+          card.classList.add('is-shown');
+        }
+      });
+    });
+  });
+
+  /* кейсы */
+  var cases = {
+    schedule: {
+      kicker: 'Кейс · PWA и iOS',
+      title: 'Расписание колледжа',
+      task: 'Расписание приходило PDF и Excel: студенты искали свои пары вручную, изменения терялись.',
+      solution: 'Парсер PDF/Excel, PWA с офлайн-режимом и iOS-приложение: группы, кабинеты, напоминания, поиск.',
+      result: '29 групп и 50 преподавателей. Расписание обновляется за минуты, работает без интернета.',
+      stack: ['PWA', 'JavaScript', 'pdf.js', 'Swift']
+    },
+    mis: {
+      kicker: 'Кейс · учебная лаборатория',
+      title: 'МИС–ЛИС: цифровая лаборатория',
+      task: 'Отработать работу с медицинской информационной системой без доступа к реальной системе.',
+      solution: '10 сценариев в одном HTML-файле: карта пациента, назначения, передача в ЛИС, отчёт для Moodle.',
+      result: 'Работает офлайн, встраивается в Moodle, оценка действий автоматическая.',
+      stack: ['HTML / JS', 'Moodle', 'SCORM']
+    },
+    trainers: {
+      kicker: 'Кейс · SCORM-тренажёры',
+      title: 'Учебные тренажёры',
+      task: 'Нужны управляемые сценарии для отработки действий без риска для пациента.',
+      solution: 'Пять тренажёров: стационар и эпикриз, лабораторный контроль, рецепт, регистратура, ЭМК.',
+      result: 'SCORM и HVP, отчёты в Moodle, работа без интернета.',
+      stack: ['SCORM', 'HVP', 'Moodle']
+    },
+    web: {
+      kicker: 'Кейс · веб-инфраструктура',
+      title: 'Веб-сервисы и PWA',
+      task: 'Проектам нужны домен, HTTPS и предсказуемый деплой без ручных операций.',
+      solution: 'Статика и API, nginx, Let\'s Encrypt, бэкапы, поддомены под отдельные сервисы.',
+      result: 'Сайт и сервисы живут на своём домене, обновление — одна команда.',
+      stack: ['FastAPI', 'React', 'nginx']
+    },
+    sec: {
+      kicker: 'Кейс · информационная безопасность',
+      title: 'Информационная безопасность',
+      task: 'Персональные данные в образовании обрабатывались без единого регламента.',
+      solution: 'Разработал и утвердил национальный регламент защиты ПДн, политики доступа, обучение сотрудников.',
+      result: 'Регламент внедрён: доступы и инциденты под контролем.',
+      stack: ['152-ФЗ', 'Политики', 'Аудит']
+    },
+    docs: {
+      kicker: 'Кейс · автоматизация',
+      title: 'Автоматизация учебных документов',
+      task: 'Пособия и рабочие программы собирались вручную, с ошибками оформления.',
+      solution: 'Шаблоны, проверки структуры и оформления, выгрузка в DOCX и PDF за один запуск.',
+      result: 'Комплект документов вместо многочасовой вёрстки.',
+      stack: ['Python', 'DOCX', 'PDF']
+    }
+  };
+
+  var dialog = document.getElementById('case-dialog');
+  if (dialog && typeof dialog.showModal === 'function') {
+    var fill = function (id, text) {
+      var el = document.getElementById(id);
+      if (el) el.textContent = text;
+    };
+
+    document.querySelectorAll('.case-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = cases[btn.getAttribute('data-case')];
+        if (!item) return;
+        fill('case-kicker', item.kicker);
+        fill('case-title', item.title);
+        fill('case-task', item.task);
+        fill('case-solution', item.solution);
+        fill('case-result', item.result);
+
+        var stack = document.getElementById('case-stack');
+        if (stack) {
+          stack.innerHTML = '';
+          item.stack.forEach(function (t) {
+            var s = document.createElement('span');
+            s.textContent = t;
+            stack.appendChild(s);
+          });
+        }
+        var cta = document.getElementById('case-cta');
+        if (cta) cta.href = 'mailto:glebe.ru@yandex.ru?subject=' + encodeURIComponent('Проект: ' + item.title);
+
+        dialog.showModal();
+      });
+    });
+
+    var closeBtn = dialog.querySelector('.case-close');
+    if (closeBtn) closeBtn.addEventListener('click', function () { dialog.close(); });
+    dialog.addEventListener('click', function (e) {
+      if (e.target === dialog) dialog.close();
+    });
+  }
+
+  /* дни в мокапе */
+  var days = {
+    mon: [
+      ['09:00', 'Информатика', '103С', false],
+      ['10:40', 'Информатика', '102С', false],
+      ['12:40', 'окно', '—', true]
+    ],
+    wed: [
+      ['09:00', 'Информатика', '101С', false],
+      ['10:40', 'окно', '—', true],
+      ['12:40', 'Информатика', '103С', false]
+    ],
+    fri: [
+      ['09:00', 'Информатика', '102С', false],
+      ['10:40', 'Информатика', '103С', false],
+      ['12:40', 'окно', '—', true]
+    ]
+  };
+
+  var tabs = document.querySelectorAll('.mock-tab');
+  var rows = document.querySelectorAll('.mock-row');
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var day = days[tab.getAttribute('data-day')];
+      if (!day) return;
+      tabs.forEach(function (t) {
+        t.classList.toggle('is-active', t === tab);
+        t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
+      });
+      rows.forEach(function (row, i) {
+        var data = day[i];
+        if (!data) return;
+        var time = row.querySelector('.mock-time');
+        var subject = row.querySelector('.mock-subject');
+        var badge = row.querySelector('.mock-badge');
+        if (time) time.textContent = data[0];
+        if (subject) subject.textContent = data[1];
+        if (badge) badge.textContent = data[2];
+        row.classList.toggle('is-muted', data[3]);
+        row.classList.remove('is-swap');
+        void row.offsetWidth;
+        row.classList.add('is-swap');
+      });
+    });
+  });
+})();

@@ -111,6 +111,11 @@
             <span class="mock-dots"><i></i><i></i><i></i></span>
             <span>Расписание · 103С</span>
           </div>
+          <div class="mock-tabs" role="tablist" aria-label="День недели">
+            <button class="mock-tab is-active" type="button" role="tab" aria-selected="true" data-day="mon">Пн</button>
+            <button class="mock-tab" type="button" role="tab" aria-selected="false" data-day="wed">Ср</button>
+            <button class="mock-tab" type="button" role="tab" aria-selected="false" data-day="fri">Пт</button>
+          </div>
           <div class="mock-row">
             <span class="mock-time">09:00</span>
             <span class="mock-subject">Информатика</span>
@@ -149,8 +154,16 @@
         <p class="section-sub">Инструменты, которыми пользуются студенты и преподаватели — не концепты.</p>
       </div>
 
-      <div class="projects">
-        <article class="project project-wide" data-reveal>
+            <div class="filters" data-reveal role="group" aria-label="Фильтр проектов">
+        <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">Все</button>
+        <button class="filter" type="button" data-filter="edu" aria-pressed="false">Учебные</button>
+        <button class="filter" type="button" data-filter="web" aria-pressed="false">Веб и PWA</button>
+        <button class="filter" type="button" data-filter="sec" aria-pressed="false">ИБ</button>
+        <button class="filter" type="button" data-filter="res" aria-pressed="false">Исследования</button>
+      </div>
+
+<div class="projects">
+        <article data-cat="edu web" class="project project-wide" data-reveal>
           <div class="project-body">
             <div class="project-top">
               <span class="tag tag-accent">PWA</span>
@@ -162,7 +175,7 @@
             <p>Загружаешь PDF или Excel — приложение находит пары, группы и кабинеты.
               29 групп и 50 преподавателей, офлайн-режим, напоминания. Есть веб-версия и iOS-приложение.</p>
             <p class="result"><span class="result-dot"></span> Внедрено · 29 групп и 50 преподавателей</p>
-            <a class="link-arrow" href="mailto:glebe.ru@yandex.ru?subject=%D0%94%D0%B5%D0%BC%D0%BE%20%C2%AB%D0%A0%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%C2%BB">Запросить демо <span>→</span></a>
+            <div class="project-links"><a class="link-arrow" href="mailto:glebe.ru@yandex.ru?subject=%D0%94%D0%B5%D0%BC%D0%BE%20%C2%AB%D0%A0%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%C2%BB">Запросить демо <span>→</span></a><button class="case-btn" type="button" data-case="schedule">Подробнее</button></div>
           </div>
           <div class="project-art art-schedule" aria-hidden="true">
             <div class="art-card">
@@ -173,62 +186,62 @@
           </div>
         </article>
 
-        <article class="project" data-reveal>
+        <article data-cat="edu" class="project" data-reveal>
           <div class="project-body">
             <div class="project-top"><span class="tag tag-blue">Moodle</span><span class="tag">HTML / JS</span><span class="tag">152-ФЗ</span></div>
             <h3>МИС–ЛИС: цифровая лаборатория</h3>
             <p>Тренажёр по медицинским информационным системам: 10 сценариев — от карты пациента
               до передачи в ЛИС. Один HTML-файл, работает офлайн, формирует отчёт для Moodle.</p>
             <p class="result"><span class="result-dot"></span> 10 сценариев · отчёт для Moodle</p>
-            <a class="link-arrow" href="mailto:glebe.ru@yandex.ru?subject=%D0%94%D0%B5%D0%BC%D0%BE%20%C2%AB%D0%9C%D0%98%D0%A1%E2%80%93%D0%9B%D0%98%D0%A1%C2%BB">Запросить демо <span>→</span></a>
+            <div class="project-links"><a class="link-arrow" href="mailto:glebe.ru@yandex.ru?subject=%D0%94%D0%B5%D0%BC%D0%BE%20%C2%AB%D0%9C%D0%98%D0%A1%E2%80%93%D0%9B%D0%98%D0%A1%C2%BB">Запросить демо <span>→</span></a><button class="case-btn" type="button" data-case="mis">Подробнее</button></div>
           </div>
           <div class="project-art art-lab" aria-hidden="true"><span>MIS<br>LIS</span></div>
         </article>
 
-        <article class="project" data-reveal>
+        <article data-cat="edu" class="project" data-reveal>
           <div class="project-body">
             <div class="project-top"><span class="tag tag-violet">SCORM</span><span class="tag">Moodle</span></div>
             <h3>Учебные тренажёры</h3>
             <p>Пять тренажёров: стационар и эпикриз, лабораторный контроль, электронный рецепт,
               регистратура, ЭМК. Встраиваются в Moodle и работают без интернета.</p>
             <p class="result"><span class="result-dot"></span> 5 тренажёров · SCORM и HVP</p>
-            <a class="link-arrow" href="#contact">Обсудить внедрение <span>→</span></a>
+            <div class="project-links"><a class="link-arrow" href="#contact">Обсудить внедрение <span>→</span></a><button class="case-btn" type="button" data-case="trainers">Подробнее</button></div>
           </div>
           <div class="project-art art-trainer" aria-hidden="true"><span>5</span></div>
         </article>
 
-        <article class="project" data-reveal>
+        <article data-cat="web" class="project" data-reveal>
           <div class="project-body">
             <div class="project-top"><span class="tag tag-blue">FastAPI</span><span class="tag">React</span><span class="tag">nginx</span></div>
             <h3>Веб-сервисы и PWA</h3>
             <p>Лендинги, API и приложения, которые ставятся на телефон и работают офлайн:
               домен, HTTPS, бэкапы и деплой — под ключ.</p>
             <p class="result"><span class="result-dot"></span> Этот сайт — тоже из этой серии</p>
-            <a class="link-arrow" href="https://github.com/mospoliteh2627-alt" target="_blank" rel="noopener">Смотреть на GitHub <span>→</span></a>
+            <div class="project-links"><a class="link-arrow" href="https://github.com/mospoliteh2627-alt" target="_blank" rel="noopener">Смотреть на GitHub <span>→</span></a><button class="case-btn" type="button" data-case="web">Подробнее</button></div>
           </div>
           <div class="project-art art-web" aria-hidden="true"><span>&lt;/&gt;</span></div>
         </article>
 
-        <article class="project" data-reveal>
+        <article data-cat="sec" class="project" data-reveal>
           <div class="project-body">
             <div class="project-top"><span class="tag tag-accent">ИБ</span><span class="tag">152-ФЗ</span><span class="tag">Аудит</span></div>
             <h3>Информационная безопасность</h3>
             <p>Национальный регламент защиты персональных данных в образовании, политики доступа,
               мониторинг инцидентов и обучение сотрудников.</p>
             <p class="result"><span class="result-dot"></span> Регламент разработан и утверждён</p>
-            <a class="link-arrow" href="#contact">Обсудить аудит <span>→</span></a>
+            <div class="project-links"><a class="link-arrow" href="#contact">Обсудить аудит <span>→</span></a><button class="case-btn" type="button" data-case="sec">Подробнее</button></div>
           </div>
           <div class="project-art art-sec" aria-hidden="true"><span>ИБ</span></div>
         </article>
 
-        <article class="project project-wide project-compact" data-reveal>
+        <article data-cat="edu web" class="project project-wide project-compact" data-reveal>
           <div class="project-body">
             <div class="project-top"><span class="tag">Python</span><span class="tag">DOCX</span><span class="tag">PDF</span></div>
             <h3>Автоматизация учебных документов</h3>
             <p>Учебные пособия, рабочие программы и комплекты документов собираются из шаблонов
               за один запуск: структура, оформление, проверки, выгрузка в DOCX и PDF.</p>
             <p class="result"><span class="result-dot"></span> Комплект вместо ручной вёрстки</p>
-            <a class="link-arrow" href="#contact">Обсудить задачу <span>→</span></a>
+            <div class="project-links"><a class="link-arrow" href="#contact">Обсудить задачу <span>→</span></a><button class="case-btn" type="button" data-case="docs">Подробнее</button></div>
           </div>
           <div class="project-art art-docs" aria-hidden="true"><span>DOCX</span></div>
         </article>
@@ -366,6 +379,24 @@
       </div>
     </div>
   </section>
+
+
+<dialog class="case" id="case-dialog" aria-labelledby="case-title">
+  <article class="case-inner">
+    <button class="case-close" type="button" aria-label="Закрыть">×</button>
+    <p class="case-kicker" id="case-kicker"></p>
+    <h3 id="case-title"></h3>
+    <dl class="case-grid">
+      <div><dt>Задача</dt><dd id="case-task"></dd></div>
+      <div><dt>Решение</dt><dd id="case-solution"></dd></div>
+      <div><dt>Результат</dt><dd id="case-result"></dd></div>
+    </dl>
+    <ul class="chips case-stack" id="case-stack"></ul>
+    <div class="case-actions">
+      <a class="btn btn-sm btn-primary" href="#contact" id="case-cta">Обсудить похожую задачу</a>
+    </div>
+  </article>
+</dialog>
 
 </main>
 
