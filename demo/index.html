@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Расписание · демо — Гуванч Шамухаммедов</title>
+<meta name="description" content="Интерактивное демо приложения «Расписание»: группы, дни, пары и кабинеты. Демонстрационные данные.">
+<meta name="theme-color" content="#f7f8fc">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="demo.css">
+</head>
+<body class="demo-page">
+
+<header class="case-top">
+  <div class="container case-top-inner">
+    <a class="case-back" href="../index.html#projects">← К проектам</a>
+    <span class="demo-badge">Демо · синтетические данные</span>
+  </div>
+</header>
+
+<main class="container demo-main">
+  <h1>Расписание</h1>
+  <p class="demo-lead">Выберите группу и день — это упрощённая копия приложения.
+    В полной версии есть поиск, напоминания, офлайн-режим и iOS-клиент.</p>
+
+  <div class="demo-controls">
+    <label class="demo-search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 16l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <input type="search" id="q" placeholder="Группа или специальность" autocomplete="off" aria-label="Поиск группы">
+    </label>
+    <div class="demo-groups" id="groups" role="tablist" aria-label="Группы"></div>
+  </div>
+
+  <div class="demo-days" id="days" role="tablist" aria-label="День недели">
+    <button class="demo-day is-active" type="button" role="tab" aria-selected="true" data-day="mon">Понедельник</button>
+    <button class="demo-day" type="button" role="tab" aria-selected="false" data-day="wed">Среда</button>
+    <button class="demo-day" type="button" role="tab" aria-selected="false" data-day="fri">Пятница</button>
+  </div>
+
+  <ul class="demo-list" id="list" aria-live="polite"></ul>
+
+  <p class="demo-note">
+    Данные вымышленные, совпадения случайны. Настоящее приложение разбирает PDF и Excel
+    с расписанием колледжа — <a href="../cases/schedule.html">подробнее в кейсе</a>.
+  </p>
+</main>
+
+<script src="demo.js"></script>
+</body>
+</html>
