@@ -1868,3 +1868,10 @@ html[data-theme="light"] { --accent-ink: #ffffff; }
 @media (max-width: 480px) {
   .eyebrow { letter-spacing: .06em; }
 }
+
+/* мессенджеры в контактах */
+.messengers { display: flex; gap: 10px; }
+.messengers .btn { flex: 1 1 0; text-align: center; }
+@media (max-width: 420px) {
+  .messengers { flex-direction: column; }
+}
