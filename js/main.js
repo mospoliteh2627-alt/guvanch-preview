@@ -143,6 +143,7 @@
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var header = document.getElementById('header');
   var progress = document.getElementById('progress');
+  var toTop = document.getElementById('to-top');
 
   /* прогресс чтения + автоскрытие шапки */
   var lastY = window.scrollY;
@@ -156,6 +157,7 @@
       var ratio = max > 0 ? Math.min(y / max, 1) : 0;
       progress.style.transform = 'scaleX(' + ratio + ')';
     }
+    if (toTop) toTop.classList.toggle('is-visible', y > 700);
     if (header) {
       header.classList.toggle('is-scrolled', y > 8);
       var down = y > lastY && y > 160;

@@ -1774,3 +1774,31 @@ html[data-theme="light"] { --accent-ink: #ffffff; }
   .cv-job { break-inside: avoid; }
   a { color: inherit; text-decoration: none; }
 }
+
+/* кнопка «наверх» */
+.to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity .25s ease, transform .25s ease, visibility .25s;
+  z-index: 60;
+}
+.to-top.is-visible { opacity: 1; visibility: visible; transform: none; }
+.to-top:hover { color: var(--accent); border-color: var(--accent); }
+.footer-top { color: var(--muted); }
+
+@media print { .to-top { display: none; } }
