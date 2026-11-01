@@ -1877,7 +1877,9 @@ html[data-theme="light"] { --accent-ink: #ffffff; }
 .messengers .btn { flex: 1 1 0; text-align: center; }
 .messengers .btn-mail { flex: 0 0 auto; width: 56px; }
 @media (max-width: 420px) {
-  .messengers { flex-direction: column; }
+  .messengers { flex-direction: row; gap: 8px; }
+  .messengers .btn { padding-left: 12px; padding-right: 12px; font-size: 14px; }
+  .messengers .btn-mail { flex: 0 0 46px; width: 46px; }
 }
 
 /* компактная печать резюме */
