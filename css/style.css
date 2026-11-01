@@ -249,6 +249,8 @@ html[data-theme="light"] .icon-moon { display: block; }
 
 .btn-sm { padding: 10px 16px; font-size: 13.5px; border-radius: 12px; }
 .btn-lg { padding: 15px 24px; font-size: 15px; }
+.btn-mail { width: 56px; height: 56px; padding: 0; border-radius: 16px; display: inline-grid; place-items: center; justify-self: start; }
+.btn-mail svg { width: 21px; height: 21px; }
 
 .burger {
   display: none;
