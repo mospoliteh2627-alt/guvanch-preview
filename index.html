@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Гуванч Шамухаммедов — преподаватель ИТ и разработчик учебных тренажёров</title>
 <meta name="description" content="Преподаватель информатики, 15+ лет в ИТ и ИБ. Учебные тренажёры, PWA-расписание, автоматизация документов. 26 публикаций, кейсы и демо.">
 <meta name="author" content="Гуванч Шамухаммедов">
@@ -20,14 +22,7 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/favicon.svg">
 <link rel="stylesheet" href="css/style.css">
-<script>
-  (function () {
-    try {
-      var stored = localStorage.getItem('theme');
-      document.documentElement.dataset.theme = stored === 'dark' ? 'dark' : 'light';
-    } catch (e) {}
-  })();
-</script>
+<script src="js/theme.js"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
