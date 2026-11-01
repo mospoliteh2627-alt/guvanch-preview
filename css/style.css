@@ -249,7 +249,7 @@ html[data-theme="light"] .icon-moon { display: block; }
 
 .btn-sm { padding: 10px 16px; font-size: 13.5px; border-radius: 12px; }
 .btn-lg { padding: 15px 24px; font-size: 15px; }
-.btn-mail { width: 56px; height: 56px; padding: 0; border-radius: 16px; display: inline-grid; place-items: center; justify-self: start; }
+.btn-mail { padding: 0; border-radius: 16px; display: inline-grid; place-items: center; }
 .btn-mail svg { width: 21px; height: 21px; }
 
 .burger {
@@ -1873,8 +1873,9 @@ html[data-theme="light"] { --accent-ink: #ffffff; }
 }
 
 /* мессенджеры в контактах */
-.messengers { display: flex; gap: 10px; }
+.messengers { display: flex; gap: 10px; align-items: stretch; }
 .messengers .btn { flex: 1 1 0; text-align: center; }
+.messengers .btn-mail { flex: 0 0 auto; width: 56px; }
 @media (max-width: 420px) {
   .messengers { flex-direction: column; }
 }
