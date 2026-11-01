@@ -1875,3 +1875,54 @@ html[data-theme="light"] { --accent-ink: #ffffff; }
 @media (max-width: 420px) {
   .messengers { flex-direction: column; }
 }
+
+/* компактная печать резюме */
+@media print {
+  .case-page { background: #fff !important; }
+  .cv-main { padding: 0 !important; max-width: none; }
+  .cv-head h1 { font-size: 26pt; }
+  .cv-role { margin-top: 6px; font-size: 11pt; }
+  .cv-contacts { margin-top: 12px; padding-top: 10px; gap: 4px 16px; font-size: 9.5pt; }
+  .cv-block { margin-top: 16px; padding-top: 10px; break-inside: auto; }
+  .cv-block h2 { font-size: 13pt; break-after: avoid; page-break-after: avoid; }
+  .cv-block > p { margin-top: 8px; font-size: 9.5pt; line-height: 1.42; }
+  .cv-jobs { gap: 12px; margin-top: 10px; }
+  .cv-job { break-inside: avoid; page-break-inside: avoid; }
+  .cv-job h3 { font-size: 11pt; margin-top: 2px; }
+  .cv-period { font-size: 8.5pt; }
+  .cv-company { font-size: 9pt; }
+  .cv-job ul { margin-top: 5px; gap: 3px; }
+  .cv-job li { font-size: 9.2pt; line-height: 1.38; }
+  .cv-edu li { padding: 6px 0; font-size: 9.2pt; }
+  .cv-skills { gap: 12px; margin-top: 10px; }
+  .cv-skill h3 { font-size: 9.5pt; }
+  .cv-page .chips span { padding: 3px 7px; font-size: 8.4pt; }
+  .cv-note { display: none; }
+  .cv-page a { color: inherit; text-decoration: none; }
+}
+
+@media print {
+  .cv-main { padding: 0 !important; }
+  .cv-head h1 { font-size: 23pt; margin-top: 4px; }
+  .cv-role { font-size: 10.5pt; }
+  .cv-block { margin-top: 12px; padding-top: 8px; }
+  .cv-block h2 { font-size: 12pt; }
+  .cv-jobs { gap: 10px; }
+  .cv-job li { font-size: 8.9pt; line-height: 1.32; }
+  .cv-edu li { padding: 4px 0; font-size: 8.9pt; }
+  .cv-skills { gap: 8px; }
+  .cv-page .chips span { font-size: 8.1pt; padding: 2px 6px; }
+  .cv-job { break-inside: avoid; }
+}
+
+@media print {
+  .cv-jobs { gap: 8px; }
+  .cv-job ul { gap: 2px; margin-top: 4px; }
+  .cv-job li { font-size: 8.8pt; line-height: 1.28; }
+  .cv-edu li { padding: 2px 0; }
+  .cv-block { margin-top: 10px; padding-top: 7px; }
+  .cv-block h2 { margin-bottom: 2px; }
+  .cv-skills { gap: 6px; margin-top: 6px; }
+  .cv-skill .chips { margin-top: 3px; }
+  .cv-page .chips span { padding: 1px 5px; }
+}
