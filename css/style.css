@@ -1682,3 +1682,14 @@ html[data-theme="light"] .contact-card {
 }
 
 .case-cta-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* компактнее между блоками */
+.section { padding: clamp(44px, 4.6vw, 64px) 0; }
+.section-head { margin-bottom: 32px; }
+.hero { padding: clamp(108px, 12vh, 132px) 0 4px; }
+.hero-meta { margin-top: 30px; padding-top: 20px; }
+.stack { margin-top: 30px; padding-top: 18px; }
+.work-grid { gap: 28px; }
+.services { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+
+.section { padding: clamp(40px, 4vw, 56px) 0; }
