@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Приложения — Android-сборки</title>
+<style>
+  :root { --ink:#101828; --muted:#667085; --line:#e4e7ec; --blue:#1d4ed8; }
+  * { box-sizing: border-box; }
+  html, body { margin:0; }
+  body {
+    background:#f4f5f7; color:var(--ink);
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a { color: inherit; }
+  .wrap { width:1180px; margin:0 auto; padding:56px 32px 64px; }
+
+  header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:36px; }
+  .eyebrow { font-size:13px; letter-spacing:1.4px; text-transform:uppercase; color:var(--blue); font-weight:650; margin-bottom:10px; }
+  h1 { font-size:40px; line-height:1.1; margin:0 0 10px; letter-spacing:-.6px; }
+  .lede { font-size:16px; line-height:1.5; color:var(--muted); max-width:620px; margin:0; }
+  .stamp { text-align:right; font-size:13px; color:var(--muted); line-height:1.5; }
+  .stamp b { color:var(--ink); font-weight:650; }
+
+  .grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:22px; }
+
+  .card {
+    background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden;
+    box-shadow:0 1px 2px rgba(16,24,40,.05), 0 8px 24px -18px rgba(16,24,40,.35);
+    display:flex; flex-direction:column;
+  }
+  .shot { height:262px; background:#e9edf3; overflow:hidden; position:relative; }
+  .shot img { width:100%; display:block; }
+  .shot::after {
+    content:""; position:absolute; inset:auto 0 0 0; height:74px;
+    background:linear-gradient(to bottom, rgba(255,255,255,0), #fff);
+  }
+  .body { padding:22px 20px 24px; display:flex; flex-direction:column; flex:1; }
+  .head { display:flex; gap:12px; align-items:center; margin-bottom:12px; }
+  .icon { width:44px; height:44px; border-radius:11px; border:1px solid var(--line); flex:none; }
+  .head h2 { font-size:18px; margin:0 0 2px; letter-spacing:-.2px; }
+  .kind { font-size:12.5px; color:var(--muted); }
+  .desc { font-size:13.8px; line-height:1.5; color:#475467; margin:0 0 14px; flex:1; }
+  .meta { list-style:none; display:flex; flex-wrap:wrap; gap:6px; padding:0; margin:0 0 16px; }
+  .meta li {
+    font-size:12px; color:#475467; background:#f2f4f7; border:1px solid #eaecf0;
+    border-radius:7px; padding:3px 8px;
+  }
+  .btn {
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    height:44px; border-radius:10px; background:var(--blue); color:#fff;
+    font-size:15px; font-weight:600; text-decoration:none;
+  }
+  .sha { margin-top:12px; font-family:ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size:10.5px; color:#98a2b3; word-break:break-all; line-height:1.55; }
+
+  .how { margin-top:26px; background:#fff; border:1px solid var(--line); border-radius:16px; padding:26px 28px; }
+  .how h3 { font-size:16px; margin:0 0 4px; }
+  .how p.sub { margin:0 0 20px; font-size:13.5px; color:var(--muted); }
+  .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+  .step { font-size:13.5px; line-height:1.5; color:#475467; }
+  .num {
+    width:26px; height:26px; border-radius:50%; background:#eff4ff; color:var(--blue);
+    font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-bottom:9px;
+  }
+  .note {
+    margin-top:22px; border-top:1px solid var(--line); padding-top:16px;
+    font-size:12.8px; line-height:1.55; color:var(--muted);
+  }
+  footer { margin-top:28px; font-size:12.5px; color:#98a2b3; display:flex; justify-content:space-between; }
+  @media (max-width: 980px) {
+    .wrap { width:100%; padding:28px 18px 40px; }
+    header { flex-direction:column; align-items:flex-start; gap:16px; }
+    h1 { font-size:31px; }
+    .lede { font-size:15px; }
+    .stamp { text-align:left; }
+    .grid { grid-template-columns:1fr; gap:18px; }
+    .steps { grid-template-columns:1fr 1fr; gap:16px; }
+    footer { flex-direction:column; gap:6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">Android-сборки</div>
+      <h1>Приложения</h1>
+      <p class="lede">Три приложения, собранные и подписанные для установки на телефон. Скачайте APK, разрешите установку из браузера — и приложение на устройстве.</p>
+    </div>
+    <div class="stamp">
+      <b>Сборка от 21.11.2026</b><br>
+      Подпись APK проверена<br>
+      Android 7.0 и новее
+    </div>
+  </header>
+
+  <div class="grid">
+
+    <article class="card">
+      <div class="shot"><img src="img/shot-finbridge.png" alt="FinBridge"></div>
+      <div class="body">
+        <div class="head">
+          <img class="icon" src="img/icon-finbridge.png" alt="">
+          <div>
+            <h2>FinBridge</h2>
+            <div class="kind">Мобильный банк · демо-продукт</div>
+          </div>
+        </div>
+        <p class="desc">Вход по коду, переводы с подтверждением, бюджет и лимиты, цели, подписка Premium. Офлайн-режим и журнал событий. Все операции демонстрационные.</p>
+        <ul class="meta">
+          <li>1.0.0</li><li>Android 7.0+</li><li>49 МБ</li><li>release-подпись</li>
+        </ul>
+        <a class="btn" href="https://github.com/mospoliteh2627-alt/apps/releases/latest/download/FinBridge-1.0.0.apk" download>Скачать APK</a>
+        <div class="sha">SHA-256 06f6e02431bce8b509cdf55fe3608d7b743b1d646a71e59d72335b737d4c15bb</div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="shot"><img src="img/shot-vectorbank.png" alt="Вектор Банк"></div>
+      <div class="body">
+        <div class="head">
+          <img class="icon" src="img/icon-vectorbank.png" alt="">
+          <div>
+            <h2>Вектор Банк</h2>
+            <div class="kind">Магистерский прототип · демо-контур</div>
+          </div>
+        </div>
+        <p class="desc">Бесшовные сессии: вход, переводы, смена канала и восстановление сессии после разрыва. Собран для экспериментальной части исследования.</p>
+        <ul class="meta">
+          <li>1.0.0</li><li>Android 7.0+</li><li>64 МБ</li><li>release-подпись</li>
+        </ul>
+        <a class="btn" href="https://github.com/mospoliteh2627-alt/apps/releases/latest/download/VectorBank-1.0.0.apk" download>Скачать APK</a>
+        <div class="sha">SHA-256 fd3bb4e71d92a395e1f8c38dd9a87f093eabea63524574499e331795d2917de7</div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="shot"><img src="img/shot-craftlearn.png" alt="CraftLearn"></div>
+      <div class="body">
+        <div class="head">
+          <img class="icon" src="img/icon-craftlearn.png" alt="">
+          <div>
+            <h2>CraftLearn</h2>
+            <div class="kind">Тренажёр по русскому · 6–9 класс</div>
+          </div>
+        </div>
+        <p class="desc">Квест в стиле Minecraft: три мира, 15 заданий и 48 вопросов, опыт и сердца. Подготовка к тестированию при приёме в школу и школьным работам.</p>
+        <ul class="meta">
+          <li>1.0.0</li><li>Android 7.0+</li><li>1 МБ</li><li>release-подпись</li>
+        </ul>
+        <a class="btn" href="https://github.com/mospoliteh2627-alt/apps/releases/latest/download/CraftLearn-1.0.0.apk" download>Скачать APK</a>
+        <div class="sha">SHA-256 4d005021acd3906877d08aa4e8ad781b9a2293cfde294aeb83f9645b213e5c81</div>
+      </div>
+    </article>
+
+  </div>
+
+  <section class="how">
+    <h3>Как установить</h3>
+    <p class="sub">Три шага, две минуты. Нужен только браузер на телефоне.</p>
+    <div class="steps">
+      <div>
+        <div class="num">1</div>
+        Откройте эту страницу на телефоне и нажмите «Скачать APK».
+      </div>
+      <div>
+        <div class="num">2</div>
+        Chrome спросит про опасный файл — выберите «Всё равно скачать».
+      </div>
+      <div>
+        <div class="num">3</div>
+        Разрешите установку из этого источника в настройках Android.
+      </div>
+      <div>
+        <div class="num">4</div>
+        Готово: приложение появится в меню. Обновления — по новой ссылке.
+      </div>
+    </div>
+    <div class="note">
+      Если раньше стояла debug-сборка того же приложения, её нужно удалить: подпись сменилась, поверх не установится.
+      FinBridge и «Вектор Банк» — демонстрационные приложения, реальных банковских операций в них нет.
+    </div>
+  </section>
+
+  <footer>
+    <span>APK-файлы подписаны · контрольные суммы указаны под кнопками</span>
+    <span>2026</span>
+  </footer>
+</div>
+</body>
+</html>
