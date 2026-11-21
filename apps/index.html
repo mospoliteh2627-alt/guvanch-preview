@@ -20,7 +20,11 @@
   .eyebrow { font-size:13px; letter-spacing:1.4px; text-transform:uppercase; color:var(--blue); font-weight:650; margin-bottom:10px; }
   h1 { font-size:40px; line-height:1.1; margin:0 0 10px; letter-spacing:-.6px; }
   .lede { font-size:16px; line-height:1.5; color:var(--muted); max-width:620px; margin:0; }
-  .stamp { text-align:right; font-size:13px; color:var(--muted); line-height:1.5; }
+  .stamp { display:flex; align-items:center; gap:18px; font-size:13px; color:var(--muted); line-height:1.5; }
+  .stamp-text { text-align:right; }
+  .stamp-qr { text-align:center; }
+  .stamp-qr img { width:92px; height:92px; display:block; border:1px solid var(--line); border-radius:8px; background:#fff; padding:4px; }
+  .stamp-qr span { display:block; font-size:11px; margin-top:5px; color:#98a2b3; }
   .stamp b { color:var(--ink); font-weight:650; }
 
   .grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:22px; }
@@ -74,7 +78,8 @@
     header { flex-direction:column; align-items:flex-start; gap:16px; }
     h1 { font-size:31px; }
     .lede { font-size:15px; }
-    .stamp { text-align:left; }
+    .stamp { align-items:flex-start; gap:14px; }
+    .stamp-text { text-align:left; }
     .grid { grid-template-columns:1fr; gap:18px; }
     .steps { grid-template-columns:1fr 1fr; gap:16px; }
     footer { flex-direction:column; gap:6px; }
@@ -90,9 +95,15 @@
       <p class="lede">Три приложения, собранные и подписанные для установки на телефон. Скачайте APK, разрешите установку из браузера — и приложение на устройстве.</p>
     </div>
     <div class="stamp">
-      <b>Сборка от 21.11.2026</b><br>
-      Подпись APK проверена<br>
-      Android 7.0 и новее
+      <div class="stamp-text">
+        <b>Сборка от 21.11.2026</b><br>
+        Подпись APK проверена<br>
+        Android 7.0 и новее
+      </div>
+      <div class="stamp-qr">
+        <img src="img/qr.png" alt="QR-код на страницу приложений">
+        <span>Открыть на телефоне</span>
+      </div>
     </div>
   </header>
 
