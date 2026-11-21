@@ -27,7 +27,7 @@
   .stamp-qr span { display:block; font-size:11px; margin-top:5px; color:#98a2b3; }
   .stamp b { color:var(--ink); font-weight:650; }
 
-  .grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:22px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:22px; }
 
   .card {
     background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden;
@@ -92,11 +92,11 @@
     <div>
       <div class="eyebrow">Android-сборки</div>
       <h1>Приложения</h1>
-      <p class="lede">Три приложения, собранные и подписанные для установки на телефон. Скачайте APK, разрешите установку из браузера — и приложение на устройстве.</p>
+      <p class="lede">Четыре приложения, собранные и подписанные для установки на телефон. Скачайте APK, разрешите установку из браузера — и приложение на устройстве.</p>
     </div>
     <div class="stamp">
       <div class="stamp-text">
-        <b>Сборка от 21.11.2026</b><br>
+        <b>Сборка от 22.11.2026</b><br>
         Подпись APK проверена<br>
         Android 7.0 и новее
       </div>
@@ -163,6 +163,25 @@
         </ul>
         <a class="btn" href="https://github.com/mospoliteh2627-alt/apps/releases/latest/download/CraftLearn-1.0.0.apk" download>Скачать APK</a>
         <div class="sha">SHA-256 3176407044df80104f3f7ad2c03371a7e18030efc016638692a21d884fb9f1d1</div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="shot"><img src="img/shot-raspisanie.png" alt="Расписание медколледжа"></div>
+      <div class="body">
+        <div class="head">
+          <img class="icon" src="img/icon-raspisanie.png" alt="">
+          <div>
+            <h2>Расписание медколледжа</h2>
+            <div class="kind">Расписание пар · офлайн</div>
+          </div>
+        </div>
+        <p class="desc">Пары, аудитории и звонки по группе или преподавателю. Загрузите PDF или Excel из колледжа — приложение разложит его по неделям и будет работать без интернета.</p>
+        <ul class="meta">
+          <li>1.0.0</li><li>Android 8.0+</li><li>1,7 МБ</li><li>release-подпись</li>
+        </ul>
+        <a class="btn" href="https://github.com/mospoliteh2627-alt/apps/releases/latest/download/raspisanie-medkollege-1.0.0.apk" download>Скачать APK</a>
+        <div class="sha">SHA-256 f01168085af787166ac4acf5ab1e34b1dfeb528e87bad30c4fe2f033413402a7</div>
       </div>
     </article>
 
